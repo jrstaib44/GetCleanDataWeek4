@@ -54,4 +54,5 @@ dataMelt <- melt(mergedData,id=c("activityId","activityName","subjectId"),measur
 grpDataMelt <- group_by(dataMelt,activityId,activityName,subjectId)
 avgDataMelt <- summarise(grpDataMelt,meanvalue = mean(value,na.rm=TRUE))
 
-
+# write output data set
+write.table(avgDataMelt,file ="Week4AssignmentOutput.txt")
