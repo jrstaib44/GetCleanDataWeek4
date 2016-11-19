@@ -51,7 +51,7 @@ dataMelt <- melt(mergedData,id=c("activityId","activityName","subjectId"),measur
 
 # group and summarise to get final data set named avgDataMelt with means of each variable for each activity and subject
 
-grpDataMelt <- group_by(dataMelt,activityId,activityName,subjectId)
+grpDataMelt <- group_by(dataMelt,activityId,activityName,subjectId,variable)
 avgDataMelt <- summarise(grpDataMelt,meanvalue = mean(value,na.rm=TRUE))
 
 # write output data set
